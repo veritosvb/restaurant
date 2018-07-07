@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var path = require("path");
 
 // Routes
