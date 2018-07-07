@@ -13,25 +13,11 @@ var PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json()); 
 
-//Data
-//=========================================
+// Calls html routes
+require("routes/htmlRoutes.js")(app);
 
-var reservations = [];
-var waitList = [];
-
-// Routes
-// =======================================
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "homepage.html"));
-});
-
-app.get("/tables", function(req, res) {
-    res.sendFile(path.join(__dirname, "tables.html"));
-});
-
-app.get("/reserve", function(req, res) {
-    res.sendFile(path.join(__dirname, "reserve.html"));
-});
+//Call api routes
+require("routes/apiRoutes.js")(app);
 
 // Starts the server to begin listening
 // =============================================================
