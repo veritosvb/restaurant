@@ -18,27 +18,21 @@ module.exports = function(app){
     var chosen = req.params.reservations;
   
     console.log(chosen);
+    console.log(reservations.length);
 
     //if more reservatioons available 
 
     if(reservations.length < 5){
-        //reservations available
+        console.log("making reservation");
+    }
+    else{
+        console.log("adding to waiting list");
     }
   
-    for (var i = 0; i < reservations.length; i++) {
-      if (chosen === reservations[i].uniqueId) {
-        return res.json(reservations[i]);
-      }
-    }
-
-
-    //if no more reservatioons available waiting list
-
-  
-    return res.json(false);
   });
   
-  // Create New Characters - takes in JSON input
+
+  function makeReservation(){
   app.post("/api/reservations", function(req, res) {
     // req.body hosts is equal to the JSON post sent from the user
     // This works because of our body-parser middleware
@@ -54,6 +48,7 @@ module.exports = function(app){
   
     res.json(newTable);
   });
+}
   
     
 
