@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var tables = [
     {
       name: "Name 1",
@@ -27,9 +26,3 @@ var tables = [
   ];
 
   module.exports = tables;
-=======
-//Data
-//=========================================
-
-var reservations = [];
->>>>>>> cf9bf62246476aa3bdafb7fc84636a8ccc80dcc7
