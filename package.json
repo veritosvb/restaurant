@@ -13,5 +13,14 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "path": "^0.12.7"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veritosvb/restaurant.git"
+  },
+  "bugs": {
+    "url": "https://github.com/veritosvb/restaurant/issues"
+  },
+  "homepage": "https://github.com/veritosvb/restaurant#readme"
 }
