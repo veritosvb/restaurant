@@ -1,5 +1,4 @@
 var path = require("path");
-
 var reservations = require("../data/tableData.js");;
 var waitList = require("../data/waitinglistData.js");;
 
