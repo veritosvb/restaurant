@@ -19,7 +19,7 @@ var tables = [
         uniqueId: 2000
     },
     {
-        name: "Name 2",
+        name: "Name 4",
         phone: 34532233,
         email: "name@gmail.com",
         uniqueId: 2000

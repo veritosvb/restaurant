@@ -31,18 +31,22 @@
 			<div class="col-lg-12">
 
 				<!-- Current Reservation -->
-				<div class="panel panel-default">
+                <div class="panel panel-default">
 					<div class="panel-heading">
-						<h4 class="panel-title">Current Reservation</h4>
+						<h4 class="panel-title">Current Reservations</h4>
 					</div>
-                </div>
-                <!-- Waiting List -->
+					<div class="panel-body" id="reservations">
+					</div>
+				</div>
+
+				<!-- Waiting List Panel -->
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h4 class="panel-title">Waiting List</h4>
 					</div>
-                </div>
-                
+					<div class="panel-body" id="waitlist">
+					</div>
+				</div>
 			</div>
 		</div>
         
@@ -50,12 +54,36 @@
         <div>
             <h4>Control Panel</h4>
             <a href="/homepage">Homepage </a> ||
-            <a href="/view">Waiting list</a> ||
+            <a href="/view">View reservation</a> ||
             <a href="/makereservation">Make reservation</a>
     
         </div>
         
 
     </div>
+
+    <script type="text/javascript">
+
+			//name: $("#name").val().trim(),
+			//phone: $("#phone").val().trim(),
+			//email: $("#email").val().trim(),
+			//uniqueid: $("#uniqueID").val().trim()
+
+	    $.get("/confirm/table", function(data) {
+        for (var i = 0; i < data.length; i ++){
+        var index = i + 1;
+        $("#reservations").append("<h2><span class='label label-primary'>" + index + "</span> "+ data[i].name + "</h2>");
+        }
+      });
+
+	    $.get("/confirm/waitlist", function(data) {
+            for (var i = 0; i < data.length; i ++){
+                var index = i + 1;
+                $("#waitlist").append("<h2><span class='label label-primary'>" + index+ "</span> "+ data[i].name + "</h2>");
+            }
+    });
+
+
+	  </script>
 </body>
 </html>

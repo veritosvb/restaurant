@@ -4,9 +4,6 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var app = express();
 
-require("./routes/apiRoutes.js")(app);
-require("./routes/htmlRoutes.js")(app);
-
 //Set up Express App
 //=========================================
 
@@ -21,3 +18,6 @@ app.use(bodyParser.json());
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
+
+  require("./routes/apiRoutes.js")(app);
+  require("./routes/htmlRoutes.js")(app);

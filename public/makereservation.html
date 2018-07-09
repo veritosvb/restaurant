@@ -74,7 +74,7 @@
 
 
 		<a href="/homepage">Homepage </a> ||
-		<a href="/view">Waiting list</a> ||
+		<a href="/view">View Reservation</a> ||
 		<a href="/makereservation">Make reservation</a>
 
 	</div>
@@ -83,28 +83,28 @@
 	<script type="text/javascript">
 		$("#makeres").on("click", function(event) {
 			event.preventDefault();
-			var newTable = {
-			name: $("#name").val().trim(),
-			phone: $("#phone").val().trim(),
-			email: $("#email").val().trim(),
-			uniqueId: $("#uniqueID").val().trim()
-			};
-
 			// Question: What does this code do??
 	    $.get("/reservations", function(data) {
+			var newTable = {
+				name: $("#name").val().trim(),
+				phone: $("#phone").val().trim(),
+				email: $("#email").val().trim(),
+				uniqueId: $("#uniqueID").val().trim()
+			};
         if (data) {
 			alert("confirming table");
-			$.post("/reservations/table", newTable).then(function(data) {
+			
+			$.post("/reservations/table", newTable)
+			.then(function(data) {
 				console.log("Reservation added", data);
-	
 			});
         }
         else {
 			alert("to wait list");
-			$.post("/reservations/waitlist", newTable).then(function(data) {
+			$.post("/reservations/waitlist", newTable)
+			.then(function(data) {
 				console.log("Waitlist Added...", data);
-				
-        });
+			});
         }
       });
     });
